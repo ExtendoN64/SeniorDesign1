@@ -30,7 +30,6 @@ axis_3 = [10,10,10]
 avg_2 = 20
 avg_3 = 20
 
-
 # ----- GPIO + Arduino Serial Setup -----
 GPIO.setmode(GPIO.BCM)
 
@@ -138,7 +137,6 @@ try:
 						print('right')
 					elif (.25<avg_0<.75) and (-75<avg_1<-.25):
 						print('up right')
-				
 
 				#Right Joystick
 				if (event.axis ==2):
@@ -197,23 +195,6 @@ try:
 					print('dpad released')                
  					ser.write(b"stop\n")
 					wait_for_ready()
-
-        ser.write(b"forward\n")
-        wait_for_ready()
-        print("Moving forward")
-
-        while True:
-            with data_lock:
-                front_dist = sensor_data['front sensor']['distance']
-            if isinstance(front_dist, int) and 30 <= front_dist <= 40:
-                break
-            time.sleep(0.1)
-
-        ser.write(b"stop\n")
-        print("Stopping")
-        wait_for_ready()
-
-
 
 except KeyboardInterrupt:
     print("Interrupted by user.")
