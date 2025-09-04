@@ -48,62 +48,62 @@ def wait_for_ready():
 
 # ----- Main Logic -----
 try:
-    while True:
+	while True:
 		for event in pygame.event.get():
 			if event.type ==JOYBUTTONDOWN:
 	 
 				#Generic Buttons
 				if (event.button == 0):
 					print('a pressed')                
- 					ser.write(b"pickup\n")
+					ser.write(b"pickup\n")
 					wait_for_ready()
 				if (event.button == 1):
 					print('b pressed')                
- 					ser.write(b"drop\n")
+					ser.write(b"drop\n")
 					wait_for_ready()
 				if (event.button == 3):
 					print('x pressed')                
- 					ser.write(b"startpos\n")
+					ser.write(b"startpos\n")
 					wait_for_ready()
 				if (event.button == 4):
 					print('y pressed')                
- 					ser.write(b"startpos1\n")
+					ser.write(b"startpos1\n")
 					wait_for_ready()
 
 				#Bumper Buttons
 				if (event.button == 6):
 					print('left bumper pressed')                
- 					ser.write(b"minicounterclockwise\n")
+					ser.write(b"minicounterclockwise\n")
 					wait_for_ready()
 				if (event.button == 7):
 					print('right bumper pressed')                
- 					ser.write(b"miniclockwise\n")
+					ser.write(b"miniclockwise\n")
 					wait_for_ready()
 				
 				#Other Buttons
 				if (event.button == 10):
 					print('Select pressed')                
- 					ser.write(b"stepleft\n")
+					ser.write(b"stepleft\n")
 					wait_for_ready()
 				if (event.button == 11):
 					print('Start pressed')                
- 					ser.write(b"stepright\n")
+					ser.write(b"stepright\n")
 					wait_for_ready()
 				if (event.button == 12):
 					print('Xbox pressed')                
- 					ser.write(b"calibratestepper\n")
+					ser.write(b"calibratestepper\n")
 					wait_for_ready()
 				if (event.button == 13):
 					print('LJoyStick pressed')                
- 					ser.write(b"counterclockwise\n")
+					ser.write(b"counterclockwise\n")
 					wait_for_ready()
 				if (event.button == 14):
 					print('RJoyStick pressed')                
- 					ser.write(b"clockwise\n")
+					ser.write(b"clockwise\n")
 					wait_for_ready()
 				if (event.button == 15):
 					print('Capture pressed')                
- 					ser.write(b"stepcenter\n")
+					ser.write(b"stepcenter\n")
 					wait_for_ready() 
 								  
 			#Released Button
@@ -177,11 +177,11 @@ try:
 				#DPAD up,down,left,right
 				if (event.value == (1,0)):
 					print('right dpad')                
- 					ser.write(b"right\n")
+					ser.write(b"right\n")
 					wait_for_ready()
 				if (event.value == (-1,0)):
 					print('left dpad')                
- 					ser.write(b"left\n")
+					ser.write(b"left\n")
 					wait_for_ready()
 				if (event.value == (0,1)):
 					print('up dpad')
@@ -193,7 +193,7 @@ try:
 					wait_for_ready()
 				if (event.value == (0,0)):
 					print('dpad released')                
- 					ser.write(b"stop\n")
+					ser.write(b"stop\n")
 					wait_for_ready()
 
 except KeyboardInterrupt:
